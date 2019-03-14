@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Beyond！ Strive！">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+    会飞的星阳
+    </title>
+
+    <link rel="canonical" href="https://www.xyamm.top/2019/03/14/wenzhang2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">刘星阳的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://www.xyamm.top/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1></h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 会飞的星阳 on
+                        2019-03-14
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <hr>
+<p>title: dubbo服务治理与微服务<br>date: 2019-03-14 18:58:56</p>
+<h2 id="tags-java-分布式-添加的标签"><a href="#tags-java-分布式-添加的标签" class="headerlink" title="tags: [java,分布式]      #添加的标签"></a>tags: [java,分布式]      #添加的标签</h2><h2 id="互联网架构演变"><a href="#互联网架构演变" class="headerlink" title="互联网架构演变"></a>互联网架构演变</h2><h2 id="一体架构"><a href="#一体架构" class="headerlink" title="一体架构"></a>一体架构</h2><p>在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈不上架构，但也可以说是很好的架构，因为它足够简单。</p>
+<p><img src="https://img-blog.csdn.net/20170103111147803?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="mvc架构"><a href="#mvc架构" class="headerlink" title="mvc架构"></a>mvc架构</h2><p>但随着浏览器的出现便产生了web应用，web应用的特点是界面部分是显示在浏览器中，服务处理是在服务容器中的，页面显示一般用css+js+html技术来处理，而后端可以用java、php等语言，这就产生了前后端分离。对于web系统，一体架构难以满足前后端分离的开发需求，因而便产生了MVC架构。</p>
+<p><img src="https://img-blog.csdn.net/20170103111226848?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>MVC才算的上真正意义上的架构，因为它除了解决了前后端分离问题，还引入了一种全新的开发模式，用一种业务逻辑、数据、界面显示分离的方法组织代码，使得整个应用层次更加分明，而且各个层次之间不但减低了耦合性，还提高了各个层次的可重用性。</p>
+<p>但随着应用规模的不断扩大，应用模块不断增加，整个应用也显得越来越臃肿，维护起来也更加困难，因此便又产生了多应用架构。</p>
+<h2 id="多应用架构"><a href="#多应用架构" class="headerlink" title="多应用架构"></a>多应用架构</h2><p>多应用架构很简单，就是把原来的应用按照业务特点拆分成多个应用。比如一个大型电商系统可能包含用户系统、商品系统、订单系统、评价系统等等，我们可以把他们独立出来形成一个个单独的应用。多应用架构的特点是应用之间各自独立 ，不相互调用。</p>
+<p><img src="https://img-blog.csdn.net/20170103112334944?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>多应用虽然解决了应用臃肿问题，但应用之间相互独立，有些共同的业务或代码无法复用。</p>
+<h2 id="分布式架构"><a href="#分布式架构" class="headerlink" title="分布式架构"></a>分布式架构</h2><p>对于一个大型的互联网系统，一般会包含多个应用，而且应用之间往往还存在共同的业务，并且应用之间还存在调用关系。除此之外 ，对于大型的互联网系统还有一些其它的挑战，比如如何应对急剧增长的用户，如何管理好研发团队快速迭代产品研发，如何保持产品升级更加稳定等等 。</p>
+<p>因此，为了使业务得到很好的复用，模块更加容易拓展和维护，我们希望业务与应用分离，某个业务不再属于一个应用，而是作为一个独立的服务单独进行维护。应用本身不再是一个臃肿的模块堆积，而是由一个个模块化的服务组件组合而成。</p>
+<p><img src="https://img-blog.csdn.net/20170103142540155?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="服务化"><a href="#服务化" class="headerlink" title="服务化"></a>服务化</h2><p>服务化的特点<br>上面介绍的分布式架构即服务化。我们再总结一下，服务化主要有如下特点：</p>
+<p>应用按业务拆分成服务<br>各个服务均可独立部署<br>服务可被多个应用共享<br>服务之间可以通信<br>服务化的好处<br>那么企业采用服务化有哪些好处呢？</p>
+<p>架构上系统更加清晰<br>核心模块稳定，以服务组件为单位进行升级，避免了频繁发布带来的风险<br>开发管理方便<br>单独团队维护、工作分明，职责清晰<br>业务复用、代码复用<br>非常容易拓展<br>服务化实现方式<br>如果要实现服务化的话，最常用的方式就是利用RPC框架。因为服务组件一般分布在不同的服务器上，所以要实现服务化需要解决的第一个问题就是RPC<strong>远程服务调用</strong>。类似于RPC方案有很多，比如：</p>
+<blockquote>
+<p>Java RMI WebService Hessian Http Thrift</p>
+</blockquote>
+<p>… …</p>
+<h2 id="服务化面临的挑战"><a href="#服务化面临的挑战" class="headerlink" title="服务化面临的挑战"></a>服务化面临的挑战</h2><p>上面提到要实现服务化首先需要解决远程服务调用问题，除此之外，还有很多其他问题需要解决。</p>
+<p>服务越来越多，配置管理复杂<br>服务间依赖关系复杂<br>服务之间的负载均衡<br>服务的拓展<br>服务监控<br>服务降级<br>服务鉴权<br>服务上线与下线<br>服务文档<br>… …</p>
+<h2 id="服务治理"><a href="#服务治理" class="headerlink" title="服务治理"></a>服务治理</h2><p>上面提到了服务化，其实要想服务化，服务治理是关键。那么有没有好的服务治理方案呢？答案是有的，而且很多人都在用这个框架，他就是-dubbo。dubbo就是一个带有服务治理功能的RPC框架。</p>
+<p><img src="https://img-blog.csdn.net/20170103143859427?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>dubbo提供了一套较为完整的服务治理方案，所以企业如果要实现服务化的话，dubbo 是很好的一个选择。这里简单介绍一下dubbo服务治理相关方案。</p>
+<h2 id="服务发现注册"><a href="#服务发现注册" class="headerlink" title="服务发现注册"></a>服务发现注册</h2><p>服务治理领域最重要的问题就是服务发现与注册。dubbo中引入了一个注册中心的概念，服务的注册与发现主要就依赖这个服务中心。</p>
+<p><img src="https://img-blog.csdn.net/20170103144218850?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>dubbo注册中心服务注册发现的具体过程：</p>
+<p>服务提供者启动，向注册中心注册自己提供的服务<br>消费者启动，向注册中心订阅自己需要的服务<br>注册中心返回服务提供者的列表给消费者<br>消费者从服务提供者列表中，按照软负载均衡算法，选择一台发起请求</p>
+<h2 id="服务监控"><a href="#服务监控" class="headerlink" title="服务监控"></a>服务监控</h2><p><img src="https://img-blog.csdn.net/20170103144355679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="集群容错"><a href="#集群容错" class="headerlink" title="集群容错"></a>集群容错</h2><p><img src="https://img-blog.csdn.net/20170103144440554?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>Random Loadbalance<br>RoundRobin<br>LeastActive<br>ConsistentHash<br>dubbo服务治理优势<br>注册中心只负责注册查找，不负责请求转发，压力小<br>注册中心宕机影响消费者，消费者本地缓存服务地址列表<br>注册中心对等集群，宕掉一台自动切换到另外 一台<br>服务提供者无状态，可动态部署，注册中心负责推送<br>统计无压力，本地内存中累计次数，每分钟发送注册中心<br>消费者调用服务者，自动软负载均衡<br>通过服务中心可追踪依赖关系<br>监控中心为扩容和降级提供依据<br>可启用acl机制进行鉴权<br>与Spring整合，接入简单松耦合<br>多种序列化协议支持</p>
+<h2 id="dubbo的不足"><a href="#dubbo的不足" class="headerlink" title="dubbo的不足"></a>dubbo的不足</h2><p>消费者仍需要依赖配置中心<br>消费者仍需要依赖jar包配置provider<br>提供者文档管理功能缺失<br>无统一入口<br>不支持OAuth2.0<br>内部鉴权不方便管理<br>无外部应用鉴权<br>接口基本裸奔，无法直接对外暴露服务<br>IT治理不方便</p>
+<h2 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h2><p>现在很多人都在谈微服务，那么到底什么是微服务呢？这里谈谈我对微服务的理解。</p>
+<p>微服务有两个核心：</p>
+<p>微：服务的粒度要细，即服务要细化到API<br>服务：提供好服务，要让用户感到好用(要做到这一点很不容易)<br>上面两个核心总结起来，可以用下面这幅图表示：</p>
+<p><img src="https://img-blog.csdn.net/20170103145438903?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>从上面这幅图看出，微服务特别简单（好的架构就应该简单），我们把服务再拆分成一个个API，API是一个完整的功能。然后我们把API扔到一个“云上”，然后用户就可以到“云上”获取所有API的服务，这个“云”保证能提供好的服务。</p>
+<p>我们可以看到，有了微服务之后，服务对用户来说变得特别简单，而且上面dubbo的不足之处在微服务这里都解决了。使用者不再需要依赖任何jar包，不再需要去注册中心查找服务，不再去做鉴权处理，不用担心服务挂掉，不用担心不会使用服务，所有的问题这个“云”都解决了。这也是微服务的核心之一，提供好服务。</p>
+<p>说到这里，大家就应该大体知道该怎么做微服务了，图中的“云”是关键。下面我们就慢慢拨开这朵云。</p>
+<h2 id="微服务的实现"><a href="#微服务的实现" class="headerlink" title="微服务的实现"></a>微服务的实现</h2><p><img src="https://img-blog.csdn.net/20170103150555199?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>微服务的关键是服务网关，所以，上面提到的“云”就是服务网关。要做微服务，我们先定义一下微服务需要具备的特点。</p>
+<h2 id="微服务的特点"><a href="#微服务的特点" class="headerlink" title="微服务的特点"></a>微服务的特点</h2><p>服务需要再细化成API（服务接口——&gt;服务API）<br>每个服务由一组API组成<br>以API形式对外提供统一格式的服务<br>使用者无需任何配置，直接调用（http）<br>完整的API文档<br>API服务安全可靠稳定</p>
+<h2 id="微服务要解决的问题"><a href="#微服务要解决的问题" class="headerlink" title="微服务要解决的问题"></a>微服务要解决的问题</h2><p>上面提到了，dubbo还存在一些问题 ，其实dubbo存在的问题 就是 微服务要解决的问题，这里 再总结一下。当然，dubbo和微服务的侧重点不一样，dubbo侧重于内部接口之间的RPC，而微服务则侧重于对外提供服务。</p>
+<p>统一入口<br>安全控制：防刷限流<br>统一鉴权：应用鉴权、用户鉴权、OAuth鉴权、ACL<br>协议转换：http、dubbo、Protobuf<br>API配置管理<br>API上线、下线<br>API与服务接口映射<br>监控与报警<br>整体架构的可拓展、高并发、分布式<br>服务容器自动收缩、扩容</p>
+<h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><p><img src="https://img-blog.csdn.net/20170103151255786?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<ul>
+<li>负载均衡层：nginx/lvs/F5</li>
+<li>微服务层<br>高性能服务网关<br>统一入口、API配置管理、分流鉴权、服务监控、协议转换<br>API映射、OAuth2.0、API文档管理<br>分布式、可拓展<ul>
+<li>服务治理层<br>成熟的服务治理框架dubbo<br>MQ服务之间解耦<br>弹性云 </li>
+<li>服务docker化<br>基于访问压力的实时集群调度与管理<br>弹性云<br>这里简单介绍一下弹性云的概念，微服务要想提供好服务，保证API不能挂掉并且有好的性能，需要很高的运维要求。这里的弹性云便是自动化运维解决方案，对访问压力进行监控，根据监控解决调度应用的发布和回收。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://img-blog.csdn.net/20170103151747772?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="———非原创-转自-E-k-in"><a href="#———非原创-转自-E-k-in" class="headerlink" title="———非原创  转自 E_k_in"></a><a href="https://blog.csdn.net/qq_34310242/article/details/80786791" target="_blank" rel="noopener">———非原创  转自 E_k_in</a></h2>
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/03/13/wenzhang1/" data-toggle="tooltip" data-placement="top" title="Mysql这几种优化方式你掌握了吗？">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="/www.baidu.com" target="_blank">百度一下</a></li>
+                    
+                        <li><a href="/www.google.com" target="_blank">Google一下</a></li>
+                    
+                        <li><a href="#" target="_blank">等待友链交换</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Demonbane_x">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/demonbane.cn">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/Liuxingyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/Liuxingyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://www.xyamm.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://www.xyamm.top/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
