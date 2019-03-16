@@ -289,6 +289,8 @@ git push origin master （把本地的更新推送到服务器
       const container = document.createElement('div');
       container.lang = "en-US";
       container.className = 'gitment-container gitment-root-container';
+	  container.style.width ='50%';
+	  container.style.margin='auto';
       container.appendChild(instance.renderHeader(state, instance));
       container.appendChild(instance.renderEditor(state, instance));
       container.appendChild(instance.renderComments(state, instance));
