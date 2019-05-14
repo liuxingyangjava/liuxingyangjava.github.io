@@ -261,7 +261,7 @@ eureka.client.serviceUrl.defaultZone=http://peer1:8000/eureka/
 <pre><code> #分别以peer1和peeer2 配置信息启动eureka
 java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
 java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
-</code></pre><p>启动peer1时会报错，这时不要慌，因为peer1指向的是peer2，此时peer2还没有启动，紧接着启动peer2就好<br>启动后访问 <a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> 在Ds Replicas 会引入peer2，换之，访问<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> 就会进入peer2的服务治理界面<br><img src="/2019/05/14/wenzhang7/img5.jpg" alt="在这里插入图片描述"></p>
+</code></pre><p>启动peer1时会报错，这时不要慌，因为peer1指向的是peer2，此时peer2还没有启动，紧接着启动peer2就好<br>启动后访问 <a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> 在Ds Replicas 会引入peer2，换之，访问<a href="http://localhost:8001/" target="_blank" rel="noopener">http://localhost:8001/</a> 就会进入peer2的服务治理界面<br><img src="/2019/05/14/wenzhang7/img5.jpg" alt="在这里插入图片描述"></p>
 
 
                 <hr>
