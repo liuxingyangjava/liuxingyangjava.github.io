@@ -28,7 +28,7 @@
     会飞的星阳
     </title>
 
-    <link rel="canonical" href="https://www.xyamm.top/about/">
+    <link rel="canonical" href="https://www.xyamm.top/2019/05/14/wenzhang7/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -151,217 +151,176 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/about-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://www.xyamm.top/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h2><!--About-->你好，我是刘星阳.</h2>
-                    <!--<hr class="small">-->
-                    <span class="subheading"><!--你好，我是刘星阳.--></span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
+                        
+                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
+                        
+                    </div>
+                    <h1>Springcloud第一话 —— Eureka服务治理</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 会飞的星阳 on
+                        2019-05-14
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <blockquote>
-<p>远方不远<br>代码改变世界</p>
-</blockquote>
-<p>在去努力做好任何一件事情之前都需要有一个明确的自我认知，了解自己的性格、了解自己的技术水平，当然也要明白社会需要我们创造什么样的价值。无论是了解自己还是认识社会，我们都需要选择一个合适的参照标准，正确评价自己，从而把握好自己的发展方向。相信很多正在学习开发或正在从事开发的朋友都希望自己能够成长为高级工程师。做好职业规划对自身成长至关重要。<br><br>这里或是一些未来的旅行经验<br>或是一些未来的学习心得<br>或是人生感悟<br><br>一起努力<br>一起加油<br><br><br><br><br><br><br><br><br><br>Wechat ID：lxy1041826509</p>
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="Eureka简介"><a href="#Eureka简介" class="headerlink" title="Eureka简介"></a>Eureka简介</h2><p>Eureka是Spring Cloud Netflix微服务套件中的一部分，可以与Springboot构建的微服务很容易的整合起来。<br>Eureka包含了服务器端和客户端组件。服务器端，也被称作是服务注册中心，用于提供服务的注册与发现。Eureka支持高可用的配置，当集群中有分片出现故障时，Eureka就会转入自动保护模式，它允许分片故障期间继续提供服务的发现和注册，当故障分片恢复正常时，集群中其他分片会把他们的状态再次同步回来。</p>
+<h2 id="Eureka的作用"><a href="#Eureka的作用" class="headerlink" title="Eureka的作用"></a><strong>Eureka的作用</strong></h2><p>Eureka是SpringCloud框架中的服务注册中心，可以把它看成针对服务管理的一个admin后台，类似于dubbo中的zookeeper，之后会讲一下zk和eureka的区别。</p>
+<p>下图会展现eureka服务治理的变化</p>
+<p>没有eureka的项目间调用<br><img src="/2019/05/14/wenzhang7/img1.png" alt="在这里插入图片描述"><br>通过eureka服务治理项目间调用<br><img src="/2019/05/14/wenzhang7/img3.png" alt="在这里插入图片描述"><br><strong>上图简要描述了Eureka的基本架构，由3个角色组成：</strong></p>
+<p><strong>1、Eureka Server</strong><br>提供服务注册和发现</p>
+<p><strong>2、Service Provider</strong><br>服务提供方<br>将自身服务注册到Eureka，从而使服务消费方能够找到</p>
+<p><strong>3、Service Consumer</strong><br>服务消费方<br>从Eureka获取注册服务列表，从而能够消费服务</p>
+<h2 id="项目实例"><a href="#项目实例" class="headerlink" title="项目实例"></a>项目实例</h2><p><strong>Eureka Server</strong></p>
+<p>1.pom中添加依赖</p>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre><p>2、添加启动代码中添加 @EnableEurekaServer 注解</p>
+<pre><code>@SpringBootApplication
+@EnableEurekaServer
+public class SpringCloudEurekaApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringCloudEurekaApplication.class, args);
+    }
+}
+</code></pre><p>3.在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，在application.properties添加以下配置：</p>
+<pre><code>spring.application.name=springcloud-eureka
+
+server.port=10000
+#表示是否将自己注册到Eureka Server，默认为true。
+eureka.client.register-with-eureka=false
+#表示是否从Eureka Server获取注册信息，默认为true。
+eureka.client.fetch-registry=false
+
+eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
+</code></pre><p>启动 SpringCloudEurekaApplication  类中Main函数后， 访问 <a href="http://localhost:10000/" target="_blank" rel="noopener">http://localhost:10000/</a>  可以看到下面的页面，其中还没有发现任何服务，单节点eureka到此搭建完毕<br><img src="/2019/05/14/wenzhang7/img4.jpg" alt="在这里插入图片描述"></p>
+<p><strong>Eureka Server 多节点</strong></p>
+<p>1.添加配置文件 application-peer1.properties 内容如下</p>
+<pre><code>spring.application.name=spring-cloud-eureka
+server.port=8000
+eureka.instance.hostname=peer1
+
+eureka.client.serviceUrl.defaultZone=http://peer2:8001/eureka/
+</code></pre><p>2.添加配置文件 application-peer2.properties 内容如下</p>
+<pre><code>spring.application.name=spring-cloud-eureka
+server.port=8001
+eureka.instance.hostname=peer2
+
+eureka.client.serviceUrl.defaultZone=http://peer1:8000/eureka/
+</code></pre><p>3.在 “C:\Windows\System32\drivers\etc”（windows）下的hosts文件末尾追加如下</p>
+<pre><code>127.0.0.1 peer1  
+127.0.0.1 peer2  
+</code></pre><p>4.右键项目 run — Maven-clean 之后Maven-install 会将jar包打在target目录下</p>
+<pre><code> #分别以peer1和peeer2 配置信息启动eureka
+java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+</code></pre><p>启动peer1时会报错，这时不要慌，因为peer1指向的是peer2，此时peer2还没有启动，紧接着启动peer2就好<br>启动后访问 <a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> 在Ds Replicas 会引入peer2，换之，访问<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a> 就会进入peer2的服务治理界面<br><img src="/2019/05/14/wenzhang7/img5.jpg" alt="在这里插入图片描述"></p>
 
 
-                <!-- 如果开启评论功能 -->
+                <hr>
+
                 
-                    <hr>
 
+                <ul class="pager">
                     
-
                     
-
-
+                        <li class="next">
+                            <a href="/2019/03/29/wenzhang6/" data-toggle="tooltip" data-placement="top" title="【MySQL优化】——看懂explain[转]">Next Post &rarr;</a>
+                        </li>
                     
+                </ul>
 
-                    
-
-
+                
 
                 
 
             </div>
-			
-			
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
                         
-                            
-                            <a href="/tags/#博客" title="博客" rel="1">博客</a>
-                            
-                        
-                            
-                            <a href="/tags/#学习" title="学习" rel="5">学习</a>
-                            
-                        
-                            
-                            <a href="/tags/#java" title="java" rel="2">java</a>
-                            
-                        
-                            
-                            <a href="/tags/#编程" title="编程" rel="1">编程</a>
-                            
-                        
-                            
-                            <a href="/tags/#数据库" title="数据库" rel="4">数据库</a>
-                            
-                        
-                            
-                            <a href="/tags/#分布式" title="分布式" rel="1">分布式</a>
-                            
-                        
-                            
-                            <a href="/tags/#并发" title="并发" rel="1">并发</a>
-                            
-                        
-                            
-                            <a href="/tags/#springcloud" title="springcloud" rel="1">springcloud</a>
-                            
+                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/logo.png">
-                        
-
-                        
-                            <p>远方不远</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                                <li>
-                                    <a href="/feed.xml">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://twitter.com/Demonbane_x">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/Demonbane">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.facebook.com/demonbane.cn">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="https://github.com/Liuxingyang">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.linkedin.com/in/Liuxingyang">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                        </ul>
-                    </div>
-                </section>
-				
-				
-                
                 <!-- Friends Blog -->
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
 
 
     <!-- Footer -->
