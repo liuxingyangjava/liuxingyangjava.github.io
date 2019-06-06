@@ -28,7 +28,7 @@
     会飞的星阳
     </title>
 
-    <link rel="canonical" href="https://www.xyamm.top/">
+    <link rel="canonical" href="https://www.xyamm.top/page/2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -188,20 +188,22 @@
 
 <div class="post-preview">
 
-    <a href="/2019/05/14/wenzhang7/">
+    <a href="/2019/03/14/wenzhang2/">
         <h2 class="post-title">
-            Springcloud第一话 —— Eureka服务治理
+            dubbo服务治理与微服务
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            Eureka简介Eureka是Spring Cloud Netflix微服务套件中的一部分，可以与Springboot构建的微服务很容易的整合起来。Eureka包含了服务器端和客户端组件。服务器端，也被称作是服务注册中心，用于提供服务的注册与发现。Eureka支持高可用的配置，当集群中有分片出现故障时，Eureka就会转入自动保护模式，它允许分片故障期间继续提供服务的发现和注册，当故障分片恢......
+            互联网架构演变一体架构在计算机软件发展早期，一般桌面软件都是采用这种架构，不管是界面还是业务处理还是数据处理都放到一个包中。这种其实谈不上架构，但也可以说是很好的架构，因为它足够简单。
+
+mvc架构但随着浏览器的出现便产生了web应用，web应用的特点是界面部分是显示在浏览器中，服务处理是在服务容器中的，页面显示一般用css+js+html技术来处理，而后端可以用java、php等语言，这就......
         </div>
     </a>
     <p class="post-meta">
         Posted by 会飞的星阳 on
-        2019-05-14
+        2019-03-14
     </p>
 
 </div>
@@ -209,20 +211,23 @@
 
 <div class="post-preview">
 
-    <a href="/2019/03/29/wenzhang6/">
+    <a href="/2019/03/13/wenzhang1/">
         <h2 class="post-title">
-            【MySQL优化】——看懂explain[转]
+            Mysql这几种优化方式你掌握了吗？
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            explain explain模拟优化器执行SQL语句，在5.6以及以后的版本中，除过select，其他比如insert，update和delete均可以使用explain查看执行计划，从而知道mysql是如何处理sql语句，分析查询语句或者表结构的性能瓶颈。作用1、表的读取顺序2、数据读取操作的操作类型3、哪些索引可以使用4、哪些索引被实际使用5、表之间的引用6、每张表有多少行被优化器查询......
+            
+Mysql优化注意点网上资料一大堆,不过个人建议还是先了解原理,然后再去看优化技巧,不仅能让你更好地因地制宜的优化,也能让你对Mysql有一个新的认识高度,在此先浅谈Mysql的执行过程和Sql索引.
+
+1、选取最适用的字段属性MySQL可以很好的支持大数据量的存取，但是一般说来，数据库中的表越小，在它上面执行的查询也就会越快。因此，在创建表的时候，为了获得更好的性能，我们可以将表中字段的......
         </div>
     </a>
     <p class="post-meta">
         Posted by 会飞的星阳 on
-        2019-03-29
+        2019-03-13
     </p>
 
 </div>
@@ -230,79 +235,22 @@
 
 <div class="post-preview">
 
-    <a href="/2019/03/26/wenzhang5/">
+    <a href="/2019/03/11/hello-world/">
         <h2 class="post-title">
-            两种高并发解决方案
+            ajax+springmvc表单上传文件
         </h2>
         <h3 class="post-subtitle">
             
         </h3>
         <div class="post-content-preview">
-            
-对于我们开发的网站，如果网站的访问量非常大的话，那么我们就需要考虑相关的并发访问问题了。而并发问题是绝大部分的程序员头疼的问题。                                  
-
-通过版本机制实现乐观锁通过为数据库表增加一个 “version” 字段来 实现。 读取出数据时，将此版本号一同读出，之后更新时，对此版本号加一。此时，将提 交数据的版本数据与数据库表对应记录的......
+            多重验证的ajax上传文件是在用户点击选择图片后就把图片异步传给后台，这样可以起到多重验证的目的，更为安全一些，但我考虑到用户会多次选择图片，这样就会异步把选择过的图片都传给后台，从而使服务器多存储一下无用的图片，在这并没有用到多重验证的ajax上传文件，但是符合大家业务需求。
+HTML代码：这里用到的是Bootstrap框架
+12345678910&lt;form class="form-......
         </div>
     </a>
     <p class="post-meta">
         Posted by 会飞的星阳 on
-        2019-03-26
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/03/25/wenznang4/">
-        <h2 class="post-title">
-            mysql的跨域同步数据库
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            使用FEDERATED引擎实现跨域同步数据库
-CREATE TABLE `表名`  (
-  # 这里为表结构，可以转储远程表为sql文件，打开sql文件复制它的表结构 
-  # 注意 表结构一定要和远程表一致
-  `id` int(3) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 会飞的星阳 on
-        2019-03-25
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2019/03/15/wenzhang3/">
-        <h2 class="post-title">
-            如何搭建一个自己的博客
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            
-作为一个对技术向往，且有一颗分享之心的程序员都会把自己一些学习心得和问题贴在博客上，例如CSDN、博客园这些平台发表文章还有审核阶段，不如动动小手搭建自己的平台。这里我会一一讲解搭建过程。
-
-不多bb，开讲啦
-
-以下几点搭建个人博客必用
-你需要有一个属于自己的Github账号
-掌握前端知识（稍微掌握也可以，Hexo或者Jekyll有傻瓜式主题）
-需要使用Git bash
-真的好简单，只有三......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 会飞的星阳 on
-        2019-03-15
+        2019-03-11
     </p>
 
 </div>
@@ -314,10 +262,10 @@ CREATE TABLE `表名`  (
 
 <ul class="pager">
     
-    
-        <li class="next">
-            <a href="/page/2/">Older Posts &rarr;</a>
+        <li class="previous">
+            <a href="/">&larr; Newer Posts</a>
         </li>
+    
     
 </ul>
 
