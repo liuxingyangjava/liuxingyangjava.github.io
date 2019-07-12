@@ -188,6 +188,30 @@
 
 <div class="post-preview">
 
+    <a href="/2019/07/12/wenzhang9/">
+        <h2 class="post-title">
+            关于消息队列MQ(附active实现代码)
+        </h2>
+        <h3 class="post-subtitle">
+            
+        </h3>
+        <div class="post-content-preview">
+            @TOC
+场景说明场景说明：汽车触发围栏报警后，需要发送报警邮件和报警短信。传统的做法有两种1.串行的方式；2.并行方式。（1）串行方式：将报警信息写入数据库成功后，发送报警邮件，再发送报警短信。以上三个任务全部完成后，该报警信息加入统计列表。
+ （2）并行方式：报警信息写入数据库成功后，同时发送报警邮件和短信。
+ 假设三个业务节点每个使用50毫秒钟，不考虑网络等其他开销，则串行方式的时间是......
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by 会飞的星阳 on
+        2019-07-12
+    </p>
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/2019/05/30/wenzhang8/">
         <h2 class="post-title">
             Springcloud第二话 —— 服务提供和消费
@@ -277,32 +301,6 @@ springcloud目前我们用到的一共有三个角色：服务注册中心、服
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/2019/03/25/wenznang4/">
-        <h2 class="post-title">
-            mysql的跨域同步数据库
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            使用FEDERATED引擎实现跨域同步数据库
-CREATE TABLE `表名`  (
-  # 这里为表结构，可以转储远程表为sql文件，打开sql文件复制它的表结构 
-  # 注意 表结构一定要和远程表一致
-  `id` int(3) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 会飞的星阳 on
-        2019-03-25
-    </p>
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -344,11 +342,11 @@ CREATE TABLE `表名`  (
                             
                         
                             
-                            <a href="/tags/#学习" title="学习" rel="6">学习</a>
+                            <a href="/tags/#学习" title="学习" rel="7">学习</a>
                             
                         
                             
-                            <a href="/tags/#java" title="java" rel="2">java</a>
+                            <a href="/tags/#java" title="java" rel="3">java</a>
                             
                         
                             
