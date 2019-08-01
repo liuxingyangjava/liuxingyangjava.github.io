@@ -169,12 +169,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
+                        
                           <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
                         
-                          <a class="tag" href="/tags/#ѧϰ" title="ѧϰ">ѧϰ</a>
-                        
                     </div>
-                    <h1>Springcloud�ڶ��� ���� ��������</h1>
+                    <h1>Springcloud第二话 —— 配置中心</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 会飞的星阳 on
@@ -198,49 +198,49 @@
                 post-container">
 
                 <blockquote>
-<p>���ճ�����Ŀ�����У������޷�����һ��������Ǿ��������ļ��иĶ�������˵�����ݿ��˺���Ϣ���ģ�䶯������Jdbc������Ҫ�����޸��˺���Ϣ��һ������£�������Ҫ����һϵ�з����Ĳ��������һ�����������������������Ŀ��Ϊ���Ż�������Ϊ�����ǿ���ѡ��ʹ��SpringCloud��config����Ϊ������ȫ��ǿ�󣬿����޷�ĺ�spring��ϵ���ϡ�</p>
+<p>在日常的项目开发中，我们无法避免一种情况，那就是配置文件有改动，比如说，数据库账号信息大规模变动，导致Jdbc配置需要重新修改账号信息，一般情况下，我们需要进行一系列繁琐的操作，而且还会重启处于生产环境的项目。为了优化这种行为，我们可以选择使用SpringCloud—config，因为它功能全面强大，可以无缝的和spring体系相结合。</p>
 </blockquote>
-<h2 id="Spring-Cloud-Config"><a href="#Spring-Cloud-Config" class="headerlink" title="Spring Cloud Config"></a>Spring Cloud Config</h2><p>֮���Խ����������ģ�������Ҫ�˽����ĺ��Ĺ�����ʲô��</p>
+<h2 id="Spring-Cloud-Config"><a href="#Spring-Cloud-Config" class="headerlink" title="Spring Cloud Config"></a>Spring Cloud Config</h2><p>之所以叫作配置中心，我们需要了解它的核心功能有什么。</p>
 <ul>
-<li>�ṩ����˺Ϳͻ���֧��<ul>
-<li>���й����������������ļ�</li>
-<li>�����ļ��޸�֮�󣬿��Կ��ٵ���Ч���ص㣩</li>
-<li>���Խ��а汾����</li>
-<li>֧�ִ�Ĳ�����ѯ</li>
-<li>֧�ָ�������</li>
+<li>提供服务端和客户端支持<ul>
+<li>集中管理各环境的配置文件</li>
+<li>配置文件修改之后，可以快速的生效（重点）</li>
+<li>可以进行版本管理</li>
+<li>支持大的并发查询</li>
+<li>支持各种语言</li>
 </ul>
 </li>
 </ul>
-<p><strong>Spring Cloud Config��Ŀ��һ������ֲ�ʽϵͳ�����ù�����������������Client��Server�������֣�server�ṩ�����ļ��Ĵ洢���Խӿڵ���ʽ�������ļ��������ṩ��ȥ��clientͨ���ӿڻ�ȡ���ݡ������ݴ����ݳ�ʼ���Լ���Ӧ�á�Spring cloudʹ��git��svn��������ļ���Ĭ�������ʹ��git</strong>��</p>
-<p>���������ǽ�����뻷��</p>
-<h2 id="server��"><a href="#server��" class="headerlink" title="server��"></a>server��</h2><p><strong>1.����������Ҫ��GitHub����һ���ֿ⣬����ֿ�洢���ǵ������ļ������û��Github�˺ž�ȥע��һ�������ﲻ��׸����</strong></p>
-<p>�ֿ��д�����������������properties�ļ�<br><img src="/2019/08/01/wenzhang10/img1.png" alt="���������ͼƬ����"><br>neo-config-dev.properties�ļ����ݣ�</p>
+<p><strong>Spring Cloud Config项目是一个解决分布式系统的配置管理方案。它包含了Client和Server两个部分，server提供配置文件的存储、以接口的形式将配置文件的内容提供出去，client通过接口获取数据、并依据此数据初始化自己的应用。Spring cloud使用git或svn存放配置文件，默认情况下使用git</strong>。</p>
+<p>接下来我们进入代码环节</p>
+<h2 id="server端"><a href="#server端" class="headerlink" title="server端"></a>server端</h2><p><strong>1.首先我们需要在GitHub创建一个仓库，这个仓库存储我们的配置文件，如果没有Github账号就去注册一个，这里不再赘述。</strong></p>
+<p>仓库中创建下列三个环境的properties文件<br><img src="/2019/08/01/wenzhang10/img1.png" alt="在这里插入图片描述"><br>neo-config-dev.properties文件内容：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=dev</span><br></pre></td></tr></table></figure>
-<p>neo-config-pro.properties�ļ����ݣ�</p>
+<p>neo-config-pro.properties文件内容：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=pro</span><br></pre></td></tr></table></figure>
-<p>neo-config-test.properties�ļ����ݣ�</p>
+<p>neo-config-test.properties文件内容：</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=test</span><br></pre></td></tr></table></figure>
-<p><strong>2.����maven��Ŀ��Ϊspringcloud-config����������pom����.</strong></p>
+<p><strong>2.创建maven项目名为springcloud-config，添加如下pom依赖.</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-config-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>3.���������ļ� application.properties ����������</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#�˿ں�</span><br><span class="line">server<span class="selector-class">.port</span> = <span class="number">10086</span></span><br><span class="line">#��������</span><br><span class="line">spring<span class="selector-class">.application</span><span class="selector-class">.name</span>=spring-cloud-config-server</span><br><span class="line">#ָ���Ĵ洢�⣬svn����git</span><br><span class="line">spring<span class="selector-class">.profiles</span><span class="selector-class">.active</span>=git</span><br><span class="line">#github��Ŀ��ַ</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.uri</span>=https:<span class="comment">//github.com/liuxingyangjava/springcloud-config</span></span><br><span class="line">#�ֿ�Ŀ¼</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.search-paths</span>=config-repo</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.default-label</span>=master</span><br><span class="line">#github�˻���</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.username</span>=liuxingyangjava</span><br><span class="line">#����</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.password</span>=Lxy17601060660</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.�����ഴ��</strong></p>
+<p><strong>3.创建配置文件 application.properties ，内容如下</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#端口号</span><br><span class="line">server<span class="selector-class">.port</span> = <span class="number">10086</span></span><br><span class="line">#服务名称</span><br><span class="line">spring<span class="selector-class">.application</span><span class="selector-class">.name</span>=spring-cloud-config-server</span><br><span class="line">#指定的存储库，svn或者git</span><br><span class="line">spring<span class="selector-class">.profiles</span><span class="selector-class">.active</span>=git</span><br><span class="line">#github项目地址</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.uri</span>=https:<span class="comment">//github.com/liuxingyangjava/springcloud-config</span></span><br><span class="line">#仓库目录</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.search-paths</span>=config-repo</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.default-label</span>=master</span><br><span class="line">#github账户名</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.username</span>=liuxingyangjava</span><br><span class="line">#密码</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.password</span>=Lxy17601060660</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.启动类创建</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@EnableConfigServer</span></span><br><span class="line"><span class="variable">@SpringBootApplication</span></span><br><span class="line">public class ConfigServerApplication &#123;</span><br><span class="line"></span><br><span class="line">	<span class="selector-tag">public</span> <span class="selector-tag">static</span> <span class="selector-tag">void</span> <span class="selector-tag">main</span>(String[] args) &#123;</span><br><span class="line">		<span class="selector-tag">SpringApplication</span><span class="selector-class">.run</span>(ConfigServerApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>5.����</strong><br>���� <a href="http://localhost:8001/neo-config/dev" target="_blank" rel="noopener">http://localhost:8001/neo-config/dev</a> �鿴�Ƿ񷵻������ļ���Ϣ������ͼ<br><img src="/2019/08/01/wenzhang10/img2.png" alt="���������ͼƬ����"><br>�ֿ��е������ļ��ᱻת����web�ӿڣ� ��neo-config-dev.propertiesΪ���ӣ�����application��neo-config��profile��dev��client�������д�Ĳ�����ѡ���ȡ��Ӧ�����á�</p>
-<p>����������client��</p>
-<h2 id="client��"><a href="#client��" class="headerlink" title="client��"></a>client��</h2><p><strong>1.����pom.xml����</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- ����refresh��������������ὲ--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>2.�������������ļ���application.properties��bootstrap.properties</strong><br>application.properties�������£�</p>
+<p><strong>5.测试</strong><br>访问 <a href="http://localhost:8001/neo-config/dev" target="_blank" rel="noopener">http://localhost:8001/neo-config/dev</a> 查看是否返回配置文件信息，如下图<br><img src="/2019/08/01/wenzhang10/img2.png" alt="在这里插入图片描述"><br>仓库中的配置文件会被转换成web接口， 以neo-config-dev.properties为例子，它的application是neo-config，profile是dev。client会根据填写的参数来选择读取对应的配置。</p>
+<p>接下来配置client端</p>
+<h2 id="client端"><a href="#client端" class="headerlink" title="client端"></a>client端</h2><p><strong>1.添加pom.xml依赖</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-config<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 新增refresh依赖，作用下面会讲--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.创建两个配置文件，application.properties和bootstrap.properties</strong><br>application.properties内容如下：</p>
 <pre><code>spring.application.name=spring-cloud-config-client
 server.port=10087
-#springboot 1.5.X ����Ĭ�Ͽ�ͨ�˰�ȫ��֤��������Ҫ�������ļ�������������
+#springboot 1.5.X 以上默认开通了安全认证，所以需要在配置文件添加以下配置
 management.security.enabled=false   
-</code></pre><p>bootstrap.properties�������£�</p>
-<pre><code>spring.cloud.config.name=neo-config    #��Ӧ{application}����
-spring.cloud.config.profile=dev   #��Ӧ{profile}����
-spring.cloud.config.uri=http://localhost:10086/    #��Ӧ��
-spring.cloud.config.label=master  #��Ӧgit�ķ�֧
-</code></pre><p><strong>3.����������</strong></p>
-<p>������ֻ��Ҫ@SpringBootApplicationע��Ϳ���</p>
+</code></pre><p>bootstrap.properties内容如下：</p>
+<pre><code>spring.cloud.config.name=neo-config    #对应{application}部分
+spring.cloud.config.profile=dev   #对应{profile}部分
+spring.cloud.config.uri=http://localhost:10086/    #对应的
+spring.cloud.config.label=master  #对应git的分支
+</code></pre><p><strong>3.创建启动类</strong></p>
+<p>启动类只需要@SpringBootApplication注解就可以</p>
 <pre><code>@SpringBootApplication
 public class ConfigClientApplication {
 
@@ -248,10 +248,10 @@ public class ConfigClientApplication {
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 }
-</code></pre><p><strong>4.ʹ��@RestControllerע�����������web����</strong><br>ʹ��@Valueע������ȡserver�˲�����ֵ</p>
+</code></pre><p><strong>4.使用@RestController注册控制器进行web测试</strong><br>使用@Value注解来获取server端参数的值</p>
 <pre><code>@RestController
-@RefreshScope // ʹ�ø�ע����࣬���ڽӵ�SpringCloud������������ˢ�µ�ʱ��
-//���Զ����µ����ø��µ������Ӧ���ֶ��С�
+@RefreshScope // 使用该注解的类，会在接到SpringCloud配置中心配置刷新的时候
+//，自动将新的配置更新到该类对应的字段中。
 class HelloController {
     @Value(&quot;${neo.hello}&quot;)
     private String hello;
@@ -261,9 +261,9 @@ class HelloController {
         return this.hello;
     }
 }
-</code></pre><p>������Ŀ���� ��<a href="http://localhost:10087/hello" target="_blank" rel="noopener">http://localhost:10087/hello</a> �����������ݼ�Ϊ�ɹ�</p>
-<p>������������޸�github�ϵ������ļ������ٴν��в��ԣ��ᷢ�ֶ�ȡ�������ò�������֮ǰ�ľɲ�����Ϊʲôû���������Ϸ����ص�˵��һ���أ��������ļ��޸�֮�󣬿��Կ��ٵ���Ч��</p>
-<p>ԭ����������Ҫ�ֶ�ˢ�¿ͻ������ã���win�����cmdִ��curl -X POST <a href="http://localhost:10087/refresh��" target="_blank" rel="noopener">http://localhost:10087/refresh��</a> ���� [“neo.hello”]˵���Ѿ�������neo.hello��ֵ�������ٴη��� <a href="http://localhost:10087/hello" target="_blank" rel="noopener">http://localhost:10087/hello</a> �����أ�hello im dev update,�ͻ����Ѿ��õ������µ�ֵ��</p>
+</code></pre><p>启动项目访问 ：<a href="http://localhost:10087/hello" target="_blank" rel="noopener">http://localhost:10087/hello</a> 返回配置内容即为成功</p>
+<p>如果接下来你修改github上的配置文件内容再次进行测试，会发现读取到的配置参数还是之前的旧参数，为什么没有像我们上方标重点说的一样呢？（配置文件修改之后，可以快速的生效）</p>
+<p>原因是我们需要手动刷新客户端配置，在win上面打开cmd执行curl -X POST <a href="http://localhost:10087/refresh，" target="_blank" rel="noopener">http://localhost:10087/refresh，</a> 返回 [“neo.hello”]说明已经更新了neo.hello的值。我们再次访问 <a href="http://localhost:10087/hello" target="_blank" rel="noopener">http://localhost:10087/hello</a> ，返回：hello im dev update,客户端已经得到了最新的值。</p>
 <h2 id="over"><a href="#over" class="headerlink" title="over"></a>over</h2>
 
                 <hr>
@@ -301,9 +301,9 @@ class HelloController {
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
                         
-                          <a class="tag" href="/tags/#ѧϰ" title="ѧϰ">ѧϰ</a>
+                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
                         
                     </div>
                 </section>
