@@ -174,7 +174,7 @@
                           <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
                         
                     </div>
-                    <h1>Springcloud第二话 —— 配置中心</h1>
+                    <h1>Springcloud第三话 —— 配置中心</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 会飞的星阳 on
@@ -215,11 +215,17 @@
 <p>接下来我们进入代码环节</p>
 <h2 id="server端"><a href="#server端" class="headerlink" title="server端"></a>server端</h2><p><strong>1.首先我们需要在GitHub创建一个仓库，这个仓库存储我们的配置文件，如果没有Github账号就去注册一个，这里不再赘述。</strong></p>
 <p>仓库中创建下列三个环境的properties文件<br><img src="/2019/08/01/wenzhang10/img1.png" alt="在这里插入图片描述"><br>neo-config-dev.properties文件内容：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>dev.name=dev</p>
+</blockquote>
 <p>neo-config-pro.properties文件内容：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=pro</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>dev.name=pro</p>
+</blockquote>
 <p>neo-config-test.properties文件内容：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dev.name</span>=test</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>dev.name=test</p>
+</blockquote>
 <p><strong>2.创建maven项目名为springcloud-config，添加如下pom依赖.</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-config-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>3.创建配置文件 application.properties ，内容如下</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#端口号</span><br><span class="line">server<span class="selector-class">.port</span> = <span class="number">10086</span></span><br><span class="line">#服务名称</span><br><span class="line">spring<span class="selector-class">.application</span><span class="selector-class">.name</span>=spring-cloud-config-server</span><br><span class="line">#指定的存储库，svn或者git</span><br><span class="line">spring<span class="selector-class">.profiles</span><span class="selector-class">.active</span>=git</span><br><span class="line">#github项目地址</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.uri</span>=https:<span class="comment">//github.com/liuxingyangjava/springcloud-config</span></span><br><span class="line">#仓库目录</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.search-paths</span>=config-repo</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.default-label</span>=master</span><br><span class="line">#github账户名</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.username</span>=liuxingyangjava</span><br><span class="line">#密码</span><br><span class="line">spring<span class="selector-class">.cloud</span><span class="selector-class">.config</span><span class="selector-class">.server</span><span class="selector-class">.git</span><span class="selector-class">.password</span>=Lxy17601060660</span><br></pre></td></tr></table></figure></p>
