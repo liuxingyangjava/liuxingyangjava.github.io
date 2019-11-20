@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Beyond！ Strive！">
+    <meta name="keyword" content>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+    会飞的星阳
+    </title>
+
+    <link rel="canonical" href="https://www.xyamm.top/2019/08/01/wenzhang11/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">刘星阳的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">标签</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://www.xyamm.top/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
+                        
+                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
+                        
+                    </div>
+                    <h1>Springcloud第三话 —— 配置中心</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 会飞的星阳 on
+                        2019-08-01
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>本章主要讲述简便实现物联网，我们需要使用树莓派作为控制主板,使用python flask实现web服务器挂载，通过驱动板控制电机正反转，微信小程序作为远程控制终端，一起渐入IoT佳境吧！</p>
+</blockquote>
+<p>智能窗帘概念图：<br><img src="/2019/08/01/wenzhang11/img1.png" alt="在这里插入图片描述"><br>本次实验依赖的产品：</p>
+<ol>
+<li>Raspberry Pi 3B+  （既树莓派，含sd卡）</li>
+<li>一台拥有HDMI接口的显示器</li>
+<li>UNL2003步进电机驱动器配套28BYJ-48步进电机</li>
+<li>杜邦线若干</li>
+<li>一台健康的电脑</li>
+</ol>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><p>起初，我们需要为购买一张SD卡为树莓派烧录系统，这步操作网上有很多教程，在此不赘述。 一般烧录系统后的树莓派是有python环境的，如果没有的话，执行如下代码：</p>
+<p>1.下载</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.python.org/ftp/python/<span class="number">3.7</span>.<span class="number">0</span>/Python-<span class="number">3.7</span>.<span class="number">0</span>.tgz</span><br></pre></td></tr></table></figure>
+<p>2.解压Python-3.7.0.tgz</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf Python-<span class="number">3.7</span>.<span class="number">0</span>.tgz</span><br></pre></td></tr></table></figure>
+<p>3、建立一个空文件夹，用于存放python3程序　　　　　　　　</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/python3</span><br></pre></td></tr></table></figure>
+<p>4、执行配置文件，编译，编译安装　　　　　　　　　　　　</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd Python-<span class="number">3.7</span>.<span class="number">0</span></span><br><span class="line">./configure --prefix=/usr/local/python3</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line">安装完成没有提示错误便安装成功了</span><br></pre></td></tr></table></figure>
+<p>5、建立软连接　　　　　　　　　　　　　　　　　　　　　</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/python3/bin/python3.<span class="number">7</span> /usr/bin/python3</span><br><span class="line">ln -s /usr/local/python3/bin/pip3.<span class="number">7</span> /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+<p>6、测试一下python3是否可以用　　　　　　　　　　　　　　</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@mini Python-<span class="number">3.7</span>.<span class="number">0</span>]<span class="comment"># python3</span></span><br><span class="line">Python <span class="number">3.7</span>.<span class="number">0</span> (default, Jul <span class="number">28</span> <span class="number">2018</span>, <span class="number">22</span>:<span class="number">47</span>:<span class="number">29</span>) </span><br><span class="line">[GCC <span class="number">4.8</span>.<span class="number">5</span> <span class="number">20150623</span> (Red Hat <span class="number">4.8</span>.<span class="number">5</span>-<span class="number">28</span>)] on linux</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; print(<span class="string">"hello world!"</span>)</span><br><span class="line">hello world!</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">exit</span>()</span><br><span class="line">[root@mini Python-<span class="number">3.7</span>.<span class="number">0</span>]<span class="comment"># pip3 --version</span></span><br><span class="line">pip <span class="number">10.0</span>.<span class="number">1</span> from /usr/local/python3/lib/python3.<span class="number">7</span>/site-packages/pip (python <span class="number">3.7</span>)</span><br></pre></td></tr></table></figure>
+<p> ok，写一段python小程序，没问题的话python就安装成功了。</p>
+<h2 id="硬件介绍"><a href="#硬件介绍" class="headerlink" title="硬件介绍"></a>硬件介绍</h2><p>当我进入硬件环节的时候，对电机的了解及选配一筹莫展，得知此消息的同事奋不顾身拆开了自家电扇，囊中取物一般把他的罩极异步电机奉献给我（如下图）<br><img src="/2019/08/01/wenzhang11/img2.png" alt="在这里插入图片描述"><br>对比我后入手的28BYJ-48电机<br><img src="/2019/08/01/wenzhang11/img3.png" alt="在这里插入图片描述"></p>
+<p>显然，这台沙包大小的电机沦为过客，暂时不会和它发生任何故事，随即把它还给了风扇。</p>
+<h2 id="连接设备"><a href="#连接设备" class="headerlink" title="连接设备"></a>连接设备</h2><p>树莓派、电机、驱动器三端用杜邦线连接。</p>
+<p>树莓派引脚图：<br><img src="/2019/08/01/wenzhang11/img4.png" alt="在这里插入图片描述"><br><strong>驱动器和电机连接很简单，四口线对接即可，这里要注意的是驱动器和树莓派连接：</strong></p>
+<p>可以通过上图看出 PIN02是我们要的正极5v电，然后负极接到Groud PIN06</p>
+<ul>
+<li>5V (PIN-02)</li>
+<li>GND (PIN-06) </li>
+<li>in1 (PIN-35) </li>
+<li>in2 (PIN-36)</li>
+<li>in3 (PIN-38)</li>
+<li>in4(PIN-40)</li>
+</ul>
+<p>注：PIN对应树莓派的引脚编号，in1~in4为驱动器引脚<br><img src="/2019/08/01/wenzhang11/img5.png" alt="在这里插入图片描述"></p>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p><strong>思路：（可参考前言模型图）</strong></p>
+<p>树莓派：核心主板兼服务提供者，需部署python  flask搭建的web服务器，通过内网服务发布api接口，api接口中包含对硬件的一系列指令。<br>微信小程序：服务消费层，对接微型主板提供的程序操控api接口，以参数形式改变硬件设备的状态。</p>
+<p>发布在树莓派上的python服务代码：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask, request</span><br><span class="line">import json</span><br><span class="line">import RPi.GPIO as GPIO</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="comment">#对应引脚</span></span><br><span class="line"><span class="keyword">IN</span>1 = <span class="number">35</span>  <span class="comment"># pin11</span></span><br><span class="line"><span class="keyword">IN</span>2 = <span class="number">36</span></span><br><span class="line"><span class="keyword">IN</span>3 = <span class="number">38</span></span><br><span class="line"><span class="keyword">IN</span>4 = <span class="number">40</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def setStep(w1, w2, w3, w4):</span><br><span class="line">    GPIO.output(<span class="keyword">IN</span>1, w1)</span><br><span class="line">    GPIO.output(<span class="keyword">IN</span>2, w2)</span><br><span class="line">    GPIO.output(<span class="keyword">IN</span>3, w3)</span><br><span class="line">    GPIO.output(<span class="keyword">IN</span>4, w4)</span><br><span class="line"></span><br><span class="line"><span class="comment">#停转</span></span><br><span class="line">def stop():</span><br><span class="line">    setStep(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#电机反转</span></span><br><span class="line">def backward(delay, steps):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, steps):</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#电机正转</span></span><br><span class="line">def  forward(delay, steps):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, steps):</span><br><span class="line">        setStep(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line">        setStep(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        time.sleep(delay)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def setup():</span><br><span class="line">    GPIO.setwarnings(False)</span><br><span class="line">    GPIO.setmode(GPIO.BOARD)  <span class="comment"># Numbers GPIOs by physical location</span></span><br><span class="line">    GPIO.setup(<span class="keyword">IN</span>1, GPIO.OUT)  <span class="comment"># Set pin's mode is output</span></span><br><span class="line">    GPIO.setup(<span class="keyword">IN</span>2, GPIO.OUT)</span><br><span class="line">    GPIO.setup(<span class="keyword">IN</span>3, GPIO.OUT)</span><br><span class="line">    GPIO.setup(<span class="keyword">IN</span>4, GPIO.OUT)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def loop():</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        print(<span class="string">"backward..."</span>)</span><br><span class="line">        forward(<span class="number">0.003</span>, <span class="number">360</span>)  <span class="comment"># 512 steps --- 360 angle</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># print</span></span><br><span class="line">        <span class="comment"># "stop..."</span></span><br><span class="line">        <span class="comment"># stop()  # stop</span></span><br><span class="line">        <span class="comment"># time.sleep(3)  # sleep 3s</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># print</span></span><br><span class="line">        <span class="comment"># "forward..."</span></span><br><span class="line">        <span class="comment"># forward(0.005, 512)</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># print</span></span><br><span class="line">        <span class="comment"># "stop..."</span></span><br><span class="line">        <span class="comment"># stop()</span></span><br><span class="line">        <span class="comment"># time.sleep(3)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def destroy():</span><br><span class="line">    GPIO.cleanup()  <span class="comment"># Release resource</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#提供服务核心代码</span></span><br><span class="line">@app.route(<span class="string">"/action"</span>, methods=[<span class="string">"GET"</span>])</span><br><span class="line">def index():</span><br><span class="line"> </span><br><span class="line">    setup()</span><br><span class="line">    <span class="keyword">if</span> int(request.args.get(<span class="string">"state"</span>))==<span class="number">0</span> :</span><br><span class="line">        loop()</span><br><span class="line">        print(request.args.get(<span class="string">"state"</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"当前装置状态为开"</span></span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        destroy()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"当前装置状态为关"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(port=<span class="string">'80'</span>,debug=True,host=<span class="string">'0.0.0.0'</span>)</span><br></pre></td></tr></table></figure>
+<p>发布后即可通过链接 <a href="http://192.168.56.1/action" target="_blank" rel="noopener">http://192.168.56.1/action</a> (这里是我的内网ip，需要替换成自己的ip) 访问服务。</p>
+<p>实现层微信小程序架构图：<br><img src="/2019/08/01/wenzhang11/img6.png" alt="在这里插入图片描述"><br>只包含两个文件，学过前端的同学一目了然，这里可以理解成HTML和JavaScript</p>
+<p>index.html 代码：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--index.wxml--&gt;</span><br><span class="line">&lt;view class=<span class="string">"container"</span>&gt;</span><br><span class="line">  &lt;view class=<span class="string">"userinfo"</span>&gt;</span><br><span class="line">    &lt;button bindtap=<span class="string">'changeState'</span>&gt; &#123;&#123;textState&#125;&#125; &lt;/button&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">  &lt;view class=<span class="string">"usermotto"</span>&gt;</span><br><span class="line">    &lt;span class=<span class="string">"user-motto"</span>&gt;当前状态：&lt;text style=<span class="string">"color:red"</span>&gt;&#123;&#123;oneState&#125;&#125;&lt;/text&gt; </span><br><span class="line">     &lt;/span&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<p>index.js 代码：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">//index.js</span><br><span class="line">//获取应用实例</span><br><span class="line">const app = getApp()</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  <span class="keyword">data</span>: &#123;</span><br><span class="line">    motto: <span class="string">'Hello World'</span>,</span><br><span class="line">    userInfo: &#123;&#125;,</span><br><span class="line">    hasUserInfo: false,</span><br><span class="line">    textState:<span class="string">'打开设备'</span>,</span><br><span class="line">    oneState: <span class="string">'关'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">//主要函数</span><br><span class="line">  changeState:<span class="keyword">function</span>(e)&#123;</span><br><span class="line">    var state =<span class="number">0</span>;</span><br><span class="line">    let that = this;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (that.data.oneState==<span class="string">'关'</span>)&#123;</span><br><span class="line">      state=<span class="number">0</span>;</span><br><span class="line">      that.setData(&#123;</span><br><span class="line">        oneState:<span class="string">'开'</span>,</span><br><span class="line">        textState:<span class="string">'关闭设备'</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      that.setData(&#123;</span><br><span class="line">        oneState: <span class="string">'关'</span>,</span><br><span class="line">        textState: <span class="string">'打开设备'</span></span><br><span class="line">      &#125;)</span><br><span class="line">      state=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">      wx.request(&#123;</span><br><span class="line">        url: <span class="string">'http://192.168.56.1/action?state='</span>+state,</span><br><span class="line">        success: <span class="keyword">function</span>(res) &#123;</span><br><span class="line">           console.log(<span class="string">"状态为："</span> +state)</span><br><span class="line">           console.log(res)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>[video(video-8DdsbEKt-1574231183550)(type-bilibili)(url-<a href="https://player.bilibili.com/player.html?aid=76359642)(image-https://ss.csdn.net/p?http://i2.hdslb.com/bfs/archive/bc184306c483b217fb9695408dd2481f3f8fe079.jpg)(title-树莓派实现物联网)]" target="_blank" rel="noopener">https://player.bilibili.com/player.html?aid=76359642)(image-https://ss.csdn.net/p?http://i2.hdslb.com/bfs/archive/bc184306c483b217fb9695408dd2481f3f8fe079.jpg)(title-树莓派实现物联网)]</a></p>
+<p>当它转起来，你能感受到世界是美好的</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2019/08/01/wenzhang10/" data-toggle="tooltip" data-placement="top" title="Springcloud第三话 —— 配置中心">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2019/07/12/wenzhang9/" data-toggle="tooltip" data-placement="top" title="关于消息队列MQ(附active实现代码)">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#学习" title="学习">学习</a>
+                        
+                          <a class="tag" href="/tags/#springcloud" title="springcloud">springcloud</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+        
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<div style="text-align: center;">
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>  
+    </div>
+	<br>
+ <!-- fffffff -->
+
+
+<div id="gitment_title" class="gitment_title"></div>
+<div id="container" style="display:none"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  const myTheme = {
+    render(state, instance) {
+      const container = document.createElement('div');
+      container.lang = "en-US";
+      container.className = 'gitment-container gitment-root-container';
+	  container.style.width ='50%';
+	  container.style.margin='auto';
+      container.appendChild(instance.renderHeader(state, instance));
+      container.appendChild(instance.renderEditor(state, instance));
+      container.appendChild(instance.renderComments(state, instance));
+      container.appendChild(instance.renderFooter(state, instance));
+      return container;
+    }
+  }
+
+  function showGitment() {
+    $("#gitment_title").attr("style", "display:none");
+    $("#container").attr("style", "").addClass("gitment_container");
+    var gitment = new Gitment({
+      id: decodeURI(window.location.pathname),
+      theme: myTheme,
+      owner: 'liuxingyangjava',
+      repo: 'wohaoshuai',
+      oauth: {
+        client_id: 'e7e3e73c4d0d445edf7a',
+        client_secret: '662458b0472fe5633cd52b31286e199ad85522ec'
+      }
+    });
+    gitment.render('container');
+  }
+
+  showGitment();
+</script>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/Demonbane_x">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/Demonbane">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/demonbane.cn">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/Liuxingyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/Liuxingyang">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://www.xyamm.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://www.xyamm.top/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
